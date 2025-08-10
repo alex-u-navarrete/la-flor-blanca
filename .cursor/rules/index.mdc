@@ -1,0 +1,33 @@
+---
+description: "Restaurant Digital Front Door – guardrails for code and scope"
+globs:
+  - "**/*.ts"
+  - "**/*.tsx"
+  - "data/**/*.json"
+  - "content/**/*.md"
+---
+
+# Project Context
+- Product: Digital front door for a Salvadoran restaurant.
+- Stack: Next.js (App Router) + Tailwind on Vercel.
+- Content sources: `data/menu.json`, `content/faq.md`.
+- Ordering: Use **Square Checkout Links** for pickup. Delivery = **deep links** to DoorDash/UberEats/Grubhub.
+- Languages: EN/ES. Keep copy simple.
+
+# Hard Rules (non-negotiable)
+1. **Do not invent** custom inventory/backends or new APIs. No Orders API unless explicitly requested.
+2. **Pages that must exist**: `/` (home), `/menu`, `/order`, `/faq`, `/contact`.
+3. **Menu** renders from `data/menu.json`. No DB, no CMS in MVP.
+4. **Order** page shows Square checkout links (pickup) and partner deep links (delivery).
+5. **Keep deps minimal**. No UI libs beyond Tailwind. No server state libs for MVP.
+6. **Accessibility & mobile-first.**
+7. **Analytics (later)** behind env: `NEXT_PUBLIC_GA_ID`.
+
+# Coding Conventions
+- TypeScript strict. Small, pure components. No any.
+- Use semantic HTML; Tailwind for layout/spacing.
+- Place business copy in JSON/MD, not hard-coded in components.
+
+# Agent Behavior
+- When asked to add features, **edit only the minimal files** and provide a diff-ready patch.
+- If a request conflicts with Hard Rules, refuse and point back to this rule file.
