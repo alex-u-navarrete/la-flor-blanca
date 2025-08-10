@@ -1,0 +1,61 @@
+{
+  "categories": [
+    {
+      "id": "platillos",
+      "name": {
+        "en": "Traditional Plates",
+        "es": "Platillos Tradicionales"
+      },
+      "items": [
+        {
+          "id": "pupusa-revuelta",
+          "name": {
+            "en": "Pupusa Revuelta",
+            "es": "Pupusa Revuelta"
+          },
+          "description": {
+            "en": "Traditional pupusa filled with pork, beans, and cheese",
+            "es": "Pupusa tradicional rellena de cerdo, frijoles y queso"
+          },
+          "price": 3.50,
+          "image": "/images/pupusa-revuelta.jpg"
+        },
+        {
+          "id": "pupusa-queso",
+          "name": {
+            "en": "Cheese Pupusa",
+            "es": "Pupusa de Queso"
+          },
+          "description": {
+            "en": "Classic pupusa filled with Salvadoran cheese",
+            "es": "Pupusa clásica rellena de queso salvadoreño"
+          },
+          "price": 3.00,
+          "image": "/images/pupusa-queso.jpg"
+        }
+      ]
+    },
+    {
+      "id": "bebidas",
+      "name": {
+        "en": "Beverages",
+        "es": "Bebidas"
+      },
+      "items": [
+        {
+          "id": "horchata",
+          "name": {
+            "en": "Horchata",
+            "es": "Horchata"
+          },
+          "description": {
+            "en": "Traditional rice and cinnamon drink",
+            "es": "Bebida tradicional de arroz y canela"
+          },
+          "price": 2.50,
+          "image": "/images/horchata.jpg"
+        }
+      ]
+    }
+  ]
+}

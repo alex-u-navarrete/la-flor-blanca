@@ -1,0 +1,44 @@
+{
+  "pickup": {
+    "title": {
+      "en": "Order for Pickup",
+      "es": "Ordenar para Recoger"
+    },
+    "description": {
+      "en": "Place your order online and pick it up at our restaurant",
+      "es": "Haz tu pedido en línea y recógelo en nuestro restaurante"
+    },
+    "squareCheckoutUrl": "https://square.link/u/PLACEHOLDER",
+    "ctaText": {
+      "en": "Order Now",
+      "es": "Ordenar Ahora"
+    }
+  },
+  "delivery": {
+    "title": {
+      "en": "Delivery Options",
+      "es": "Opciones de Entrega"
+    },
+    "description": {
+      "en": "Get La Flor Blanca delivered through our trusted partners",
+      "es": "Recibe La Flor Blanca a domicilio a través de nuestros socios de confianza"
+    },
+    "partners": [
+      {
+        "name": "DoorDash",
+        "url": "https://www.doordash.com/store/PLACEHOLDER",
+        "logo": "/images/doordash-logo.svg"
+      },
+      {
+        "name": "Uber Eats",
+        "url": "https://www.ubereats.com/store/PLACEHOLDER",
+        "logo": "/images/ubereats-logo.svg"
+      },
+      {
+        "name": "Grubhub",
+        "url": "https://www.grubhub.com/restaurant/PLACEHOLDER",
+        "logo": "/images/grubhub-logo.svg"
+      }
+    ]
+  }
+}
