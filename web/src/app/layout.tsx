@@ -6,7 +6,6 @@ import "./globals.css";
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Language, LanguageContext } from '@/lib/i18n';
-import LanguagePrompt from '@/components/LanguagePrompt';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,7 +23,6 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   const [currentLang, setCurrentLang] = useState<Language>('en');
-  const [showPrompt, setShowPrompt] = useState<boolean>(false);
 
   const handleLanguageChange = (lang: Language) => {
     setCurrentLang(lang);
@@ -39,12 +37,9 @@ export default function RootLayout({
       const saved = localStorage.getItem('lfb_lang') as Language | null;
       if (saved === 'en' || saved === 'es') {
         setCurrentLang(saved);
-        setShowPrompt(false);
-      } else {
-        setShowPrompt(true);
       }
     } catch {
-      setShowPrompt(true);
+      // ignore
     }
   }, []);
 
@@ -64,14 +59,6 @@ export default function RootLayout({
             {children}
           </main>
           <Footer currentLang={currentLang} />
-          {showPrompt && (
-            <LanguagePrompt
-              onSelect={(lang) => {
-                handleLanguageChange(lang);
-                setShowPrompt(false);
-              }}
-            />
-          )}
         </LanguageContext.Provider>
       </body>
     </html>
