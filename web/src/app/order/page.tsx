@@ -86,7 +86,8 @@ export default function OrderPage() {
             Restaurant Hours
           </h3>
           <p className="text-amber-700">
-            Monday - Sunday: 11:00 AM - 9:00 PM
+            Tuesday - Thursday: 10:00 AM - 7:00 PM <br />
+            Friday - Sunday: 10:00 AM - 7:30 PM
           </p>
           <p className="text-sm text-amber-600 mt-2">
             Please note that pickup and delivery availability may vary during peak hours

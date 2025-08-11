@@ -26,17 +26,17 @@
     "partners": [
       {
         "name": "DoorDash",
-        "url": "https://www.doordash.com/store/PLACEHOLDER",
+        "url": "https://www.doordash.com/store/la-flor-blanca-salvadore%C3%B1a-los-angeles-2617444/2583160/?srsltid=AfmBOooFmU7w8ZhhAUESAG8yGP_7gHw9AVCrV4pq_veN03nXvfT3J09c",
         "logo": "/images/doordash-logo.svg"
       },
       {
         "name": "Uber Eats",
-        "url": "https://www.ubereats.com/store/PLACEHOLDER",
+        "url": "https://www.ubereats.com/store/la-flor-blanca-salvadorena/p9jQZQ4FV_iTuk0VoQdQfw?srsltid=AfmBOoocPR4j9LRq8tk-acmh3ghb6I-2yznaTFRCpS3ZZ1EJyyebPPSP",
         "logo": "/images/ubereats-logo.svg"
       },
       {
         "name": "Grubhub",
-        "url": "https://www.grubhub.com/restaurant/PLACEHOLDER",
+        "url": "https://www.grubhub.com/restaurant/la-flor-blanca-salvadorea-1279-w-jefferson-blvd-los-angeles/2415537",
         "logo": "/images/grubhub-logo.svg"
       }
     ]
