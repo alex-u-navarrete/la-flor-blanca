@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from '@/components/Header';
@@ -33,19 +33,20 @@ export default function RootLayout({
     } catch {}
   };
 
-  // Read persisted language on first mount
-  useState(() => {
+  // Read persisted language on first mount (client-only)
+  useEffect(() => {
     try {
       const saved = localStorage.getItem('lfb_lang') as Language | null;
       if (saved === 'en' || saved === 'es') {
         setCurrentLang(saved);
+        setShowPrompt(false);
       } else {
         setShowPrompt(true);
       }
     } catch {
       setShowPrompt(true);
     }
-  });
+  }, []);
 
   return (
     <html lang={currentLang}>
