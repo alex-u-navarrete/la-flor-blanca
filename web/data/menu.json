@@ -17,7 +17,7 @@
             "en": "Traditional pupusa filled with pork, beans, and cheese",
             "es": "Pupusa tradicional rellena de cerdo, frijoles y queso"
           },
-          "price": 3.50,
+          "price": 4.50,
           "image": "/images/pupusa-revuelta.jpg"
         },
         {
@@ -30,7 +30,7 @@
             "en": "Classic pupusa filled with Salvadoran cheese",
             "es": "Pupusa clásica rellena de queso salvadoreño"
           },
-          "price": 3.00,
+          "price": 4.50,
           "image": "/images/pupusa-queso.jpg"
         }
       ]
@@ -52,8 +52,21 @@
             "en": "Traditional rice and cinnamon drink",
             "es": "Bebida tradicional de arroz y canela"
           },
-          "price": 2.50,
+          "price": 5,
           "image": "/images/horchata.jpg"
+        },
+        {
+          "id": "tamarindo",
+          "name": {
+            "en": "Tamarindo",
+            "es": "Tamarindo"
+          },
+          "description": {
+            "en": "Traditional tamarindo drink",
+            "es": "Bebida tradicional de tamarindo"
+          },
+          "price": 5,
+          "image": "/images/tamarindo.jpg"
         }
       ]
     }
