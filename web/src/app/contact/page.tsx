@@ -1,12 +1,17 @@
+'use client';
+
+import { useLanguage, getTranslation } from '@/lib/i18n';
+
 export default function ContactPage() {
+  const { currentLang } = useLanguage();
   return (
     <div className="py-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">Contact Us</h1>
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">{getTranslation(currentLang, 'contactUs')}</h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Get in touch with La Flor Blanca - we&apos;d love to hear from you
+            {getTranslation(currentLang, 'contactSubtitle')}
           </p>
         </div>
 
@@ -14,7 +19,7 @@ export default function ContactPage() {
           {/* Contact Information */}
           <div>
             <h2 className="text-2xl font-bold text-gray-900 mb-6">
-              Visit Us
+              {getTranslation(currentLang, 'visitUs')}
             </h2>
             
             <div className="space-y-6">
@@ -22,12 +27,12 @@ export default function ContactPage() {
               <div className="flex items-start space-x-4">
                 <div className="text-2xl">📞</div>
                 <div>
-                  <h3 className="font-semibold text-gray-900">Phone</h3>
+                  <h3 className="font-semibold text-gray-900">{getTranslation(currentLang, 'phone')}</h3>
                   <a
-                    href="tel:(XXX) XXX-XXXX"
+                    href={`tel:${getTranslation(currentLang, 'phoneNumber')}`}
                     className="text-amber-600 hover:text-amber-700"
                   >
-                    (323) 735-1802
+                    {getTranslation(currentLang, 'phoneNumber')}
                   </a>
                 </div>
               </div>
@@ -36,10 +41,9 @@ export default function ContactPage() {
               <div className="flex items-start space-x-4">
                 <div className="text-2xl">📍</div>
                 <div>
-                  <h3 className="font-semibold text-gray-900">Address</h3>
+                  <h3 className="font-semibold text-gray-900">{getTranslation(currentLang, 'address')}</h3>
                   <p className="text-gray-600">
-                    1279 W. Jefferson Blvd<br />
-                    Los Angeles, CA 90007
+                    {getTranslation(currentLang, 'addressText')}
                   </p>
                 </div>
               </div>
@@ -48,11 +52,9 @@ export default function ContactPage() {
               <div className="flex items-start space-x-4">
                 <div className="text-2xl">🕐</div>
                 <div>
-                  <h3 className="font-semibold text-gray-900">Hours</h3>
+                  <h3 className="font-semibold text-gray-900">{getTranslation(currentLang, 'hours')}</h3>
                   <p className="text-gray-600">
-                    Mon: Closed<br />
-                    Tue-Thu: 10:00 AM - 7:00 PM<br />
-                    Fri-Sun: 10:00 AM - 7:30 PM
+                    {getTranslation(currentLang, 'hoursText')}
                   </p>
                 </div>
               </div>
@@ -61,20 +63,20 @@ export default function ContactPage() {
             {/* Quick Actions */}
             <div className="mt-8">
               <h3 className="text-lg font-semibold text-gray-900 mb-4">
-                Quick Actions
+                {getTranslation(currentLang, 'quickActions')}
               </h3>
               <div className="flex flex-col sm:flex-row gap-4">
                 <a
                   href="/order"
                   className="bg-amber-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-amber-700 transition-colors text-center"
                 >
-                  Order Online
+                  {getTranslation(currentLang, 'orderOnlineBtn')}
                 </a>
                 <a
-                  href="tel:(323) 735-1802"
+                  href={`tel:${getTranslation(currentLang, 'phoneNumber')}`}
                   className="bg-white text-amber-600 border-2 border-amber-600 px-6 py-3 rounded-lg font-semibold hover:bg-amber-50 transition-colors text-center"
                 >
-                  Call for Catering
+                  {getTranslation(currentLang, 'callForCatering')}
                 </a>
               </div>
             </div>
@@ -83,14 +85,14 @@ export default function ContactPage() {
           {/* Map Placeholder */}
           <div>
             <h2 className="text-2xl font-bold text-gray-900 mb-6">
-              Location
+              {getTranslation(currentLang, 'location')}
             </h2>
             <div className="bg-gray-100 rounded-lg h-96 flex items-center justify-center">
               <div className="text-center text-gray-500">
                 <div className="text-4xl mb-4">🗺️</div>
-                <p className="text-lg font-medium">Interactive Map</p>
+                <p className="text-lg font-medium">{getTranslation(currentLang, 'interactiveMap')}</p>
                 <p className="text-sm">
-                  Map integration coming soon
+                  {getTranslation(currentLang, 'mapComingSoon')}
                 </p>
               </div>
             </div>
@@ -103,7 +105,7 @@ export default function ContactPage() {
                 rel="noopener noreferrer"
                 className="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors inline-block"
               >
-                Get Directions
+                {getTranslation(currentLang, 'getDirections')}
               </a>
             </div>
           </div>
@@ -113,17 +115,16 @@ export default function ContactPage() {
         <div className="mt-16 bg-amber-50 border border-amber-200 rounded-lg p-8">
           <div className="text-center">
             <h3 className="text-xl font-bold text-amber-800 mb-4">
-              Planning a Special Event?
+              {getTranslation(currentLang, 'planningSpecialEvent')}
             </h3>
             <p className="text-amber-700 mb-4">
-              We offer catering services for your special occasions. 
-              Call us to discuss menu options and pricing.
+              {getTranslation(currentLang, 'cateringText')}
             </p>
             <a
-              href="tel:(323) 735-1802"
+              href={`tel:${getTranslation(currentLang, 'phoneNumber')}`}
               className="bg-amber-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-amber-700 transition-colors"
             >
-              Call for Catering
+              {getTranslation(currentLang, 'callForCatering')}
             </a>
           </div>
         </div>

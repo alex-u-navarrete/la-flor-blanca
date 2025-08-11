@@ -5,7 +5,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { Language } from '@/lib/i18n';
+import { Language, LanguageContext } from '@/lib/i18n';
+import LanguagePrompt from '@/components/LanguagePrompt';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -23,10 +24,28 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   const [currentLang, setCurrentLang] = useState<Language>('en');
+  const [showPrompt, setShowPrompt] = useState<boolean>(false);
 
   const handleLanguageChange = (lang: Language) => {
     setCurrentLang(lang);
+    try {
+      localStorage.setItem('lfb_lang', lang);
+    } catch {}
   };
+
+  // Read persisted language on first mount
+  useState(() => {
+    try {
+      const saved = localStorage.getItem('lfb_lang') as Language | null;
+      if (saved === 'en' || saved === 'es') {
+        setCurrentLang(saved);
+      } else {
+        setShowPrompt(true);
+      }
+    } catch {
+      setShowPrompt(true);
+    }
+  });
 
   return (
     <html lang={currentLang}>
@@ -38,11 +57,21 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}
       >
-        <Header currentLang={currentLang} onLanguageChange={handleLanguageChange} />
-        <main className="flex-grow">
-          {children}
-        </main>
-        <Footer currentLang={currentLang} />
+        <LanguageContext.Provider value={{ currentLang, setCurrentLang }}>
+          <Header currentLang={currentLang} onLanguageChange={handleLanguageChange} />
+          <main className="flex-grow">
+            {children}
+          </main>
+          <Footer currentLang={currentLang} />
+          {showPrompt && (
+            <LanguagePrompt
+              onSelect={(lang) => {
+                handleLanguageChange(lang);
+                setShowPrompt(false);
+              }}
+            />
+          )}
+        </LanguageContext.Provider>
       </body>
     </html>
   );

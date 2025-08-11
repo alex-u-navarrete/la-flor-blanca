@@ -1,14 +1,18 @@
+'use client';
+
 import orderData from '../../../data/order.json';
+import { useLanguage, getTranslation } from '@/lib/i18n';
 
 export default function OrderPage() {
+  const { currentLang } = useLanguage();
   return (
     <div className="py-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">Order Online</h1>
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">{getTranslation(currentLang, 'orderOnline')}</h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Choose your preferred way to enjoy La Flor Blanca
+            {getTranslation(currentLang, 'orderSubtitle')}
           </p>
         </div>
 
@@ -18,10 +22,10 @@ export default function OrderPage() {
             <div className="text-center mb-6">
               <div className="text-4xl mb-4">🏪</div>
               <h2 className="text-2xl font-bold text-gray-900 mb-2">
-                {orderData.pickup.title.en}
+                {orderData.pickup.title[currentLang]}
               </h2>
               <p className="text-gray-600">
-                {orderData.pickup.description.en}
+                {orderData.pickup.description[currentLang]}
               </p>
             </div>
             <div className="text-center">
@@ -29,9 +33,9 @@ export default function OrderPage() {
                 href={orderData.pickup.squareCheckoutUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-amber-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-amber-700 transition-colors inline-block"
+                className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors inline-block"
               >
-                {orderData.pickup.ctaText.en}
+                {orderData.pickup.ctaText[currentLang]}
               </a>
             </div>
           </div>
@@ -41,10 +45,10 @@ export default function OrderPage() {
             <div className="text-center mb-6">
               <div className="text-4xl mb-4">🚚</div>
               <h2 className="text-2xl font-bold text-gray-900 mb-2">
-                {orderData.delivery.title.en}
+                {orderData.delivery.title[currentLang]}
               </h2>
               <p className="text-gray-600 mb-6">
-                {orderData.delivery.description.en}
+                {orderData.delivery.description[currentLang]}
               </p>
             </div>
             <div className="space-y-4">
@@ -81,16 +85,15 @@ export default function OrderPage() {
         </div>
 
         {/* Hours Notice */}
-        <div className="mt-12 bg-amber-50 border border-amber-200 rounded-lg p-6 text-center">
-          <h3 className="text-lg font-semibold text-amber-800 mb-2">
-            Restaurant Hours
+        <div className="mt-12 bg-blue-50 border border-blue-200 rounded-lg p-6 text-center">
+          <h3 className="text-lg font-semibold text-blue-800 mb-2">
+            {getTranslation(currentLang, 'restaurantHours')}
           </h3>
-          <p className="text-amber-700">
-            Tuesday - Thursday: 10:00 AM - 7:00 PM <br />
-            Friday - Sunday: 10:00 AM - 7:30 PM
+          <p className="text-blue-700">
+            {getTranslation(currentLang, 'hoursText')}
           </p>
-          <p className="text-sm text-amber-600 mt-2">
-            Please note that pickup and delivery availability may vary during peak hours
+          <p className="text-sm text-blue-600 mt-2">
+            {getTranslation(currentLang, 'pickupDeliveryNote')}
           </p>
         </div>
       </div>
